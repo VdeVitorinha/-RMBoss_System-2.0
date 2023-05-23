@@ -20,7 +20,7 @@ public class ModuloConexao {
         String url = "jdbc:mysql://localhost:3306/banquinho";
         String usuario = "root";
         String senha = "S3nh@";
-        //estabelecer conexao
+        //estabelecer conexão
         try {
             Class.forName(driver);
             conexao = DriverManager.getConnection(url, usuario, senha);

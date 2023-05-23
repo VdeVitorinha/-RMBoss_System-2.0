@@ -20,6 +20,12 @@ public class Login extends javax.swing.JFrame {
     conexao = ModuloConexao.conector();
     System.out.println(conexao);
     System.out.println("conectado :)");
+    
+        if (conexao != null){
+            lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/database_status-c.png")));
+        }else{
+            lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/database_status-x.png")));
+        }
     }
     
   public void Logar(){
@@ -58,15 +64,18 @@ public class Login extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel6 = new javax.swing.JPanel();
-        btnLogar = new javax.swing.JButton();
-        CheckBox = new javax.swing.JCheckBox();
-        txtUsuarios = new javax.swing.JTextField();
-        TextoSenha = new javax.swing.JPasswordField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnLogar = new javax.swing.JButton();
+        CheckBox = new javax.swing.JCheckBox();
+        TextoSenha = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        txtUsuarios = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        lblStatus = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -86,7 +95,9 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
-        setMinimumSize(new java.awt.Dimension(400, 400));
+        setMinimumSize(new java.awt.Dimension(200, 200));
+        setPreferredSize(new java.awt.Dimension(476, 358));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -96,58 +107,7 @@ public class Login extends javax.swing.JFrame {
         jPanel6.setVerifyInputWhenFocusTarget(false);
         jPanel6.setLayout(null);
 
-        btnLogar.setBackground(new java.awt.Color(102, 102, 255));
-        btnLogar.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        btnLogar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogar.setText("Entrar");
-        btnLogar.setBorder(null);
-        btnLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLogar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogarActionPerformed(evt);
-            }
-        });
-        btnLogar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnLogarKeyPressed(evt);
-            }
-        });
-        jPanel6.add(btnLogar);
-        btnLogar.setBounds(250, 260, 70, 30);
-
-        CheckBox.setBackground(new java.awt.Color(255, 255, 255));
-        CheckBox.setText("Mostrar senha");
-        CheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(CheckBox);
-        CheckBox.setBounds(50, 260, 120, 20);
-
-        txtUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(txtUsuarios);
-        txtUsuarios.setBounds(50, 150, 269, 30);
-        jPanel6.add(TextoSenha);
-        TextoSenha.setBounds(50, 220, 269, 30);
-
-        jLabel6.setText("Senha");
-        jPanel6.add(jLabel6);
-        jLabel6.setBounds(50, 190, 70, 16);
-
-        jLabel7.setText("Usuário");
-        jPanel6.add(jLabel7);
-        jLabel7.setBounds(50, 120, 120, 16);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo Rm.png"))); // NOI18N
-        jPanel6.add(jLabel8);
-        jLabel8.setBounds(50, 10, 300, 111);
-
-        jPanel3.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel3.setBackground(new java.awt.Color(24, 31, 50));
 
         jLabel9.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,14 +131,99 @@ public class Login extends javax.swing.JFrame {
         );
 
         jPanel6.add(jPanel3);
-        jPanel3.setBounds(0, 310, 260, 27);
+        jPanel3.setBounds(0, 290, 260, 27);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/VixBay.png"))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(24, 31, 50));
+        jPanel2.setLayout(null);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo_Rm-invert.png"))); // NOI18N
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(10, 0, 300, 120);
+
+        jPanel6.add(jPanel2);
+        jPanel2.setBounds(110, 0, 390, 110);
+
+        jPanel1.setBackground(new java.awt.Color(159, 4, 2));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(null);
+
+        btnLogar.setBackground(new java.awt.Color(159, 4, 2));
+        btnLogar.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        btnLogar.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogar.setText("Entrar");
+        btnLogar.setBorder(null);
+        btnLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogarActionPerformed(evt);
+            }
+        });
+        btnLogar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnLogarKeyPressed(evt);
+            }
+        });
+        jPanel1.add(btnLogar);
+        btnLogar.setBounds(290, 240, 70, 30);
+
+        CheckBox.setBackground(new java.awt.Color(159, 4, 2));
+        CheckBox.setForeground(new java.awt.Color(255, 255, 255));
+        CheckBox.setText("Mostrar senha");
+        CheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(CheckBox);
+        CheckBox.setBounds(90, 240, 120, 30);
+
+        TextoSenha.setBackground(new java.awt.Color(24, 31, 50));
+        TextoSenha.setForeground(new java.awt.Color(255, 255, 255));
+        TextoSenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(24, 31, 50), 4));
+        TextoSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextoSenhaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(TextoSenha);
+        TextoSenha.setBounds(89, 200, 270, 30);
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Senha");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(90, 180, 70, 16);
+
+        txtUsuarios.setBackground(new java.awt.Color(24, 31, 50));
+        txtUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        txtUsuarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(24, 31, 50), 4));
+        txtUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtUsuarios);
+        txtUsuarios.setBounds(89, 150, 270, 30);
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Usuário");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(90, 130, 120, 16);
+
+        lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/database_status-x.png"))); // NOI18N
+        lblStatus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblStatus);
+        lblStatus.setBounds(400, 260, 40, 30);
+
+        jPanel6.add(jPanel1);
+        jPanel1.setBounds(10, 10, 440, 300);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ArtLogoVitória.jpg"))); // NOI18N
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.add(jLabel5);
-        jLabel5.setBounds(130, -30, 460, 693);
+        jLabel5.setBounds(-830, -380, 1650, 1060);
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(0, 0, 390, 360);
+        jPanel6.setBounds(0, 0, 500, 360);
 
         pack();
         setLocationRelativeTo(null);
@@ -207,6 +252,10 @@ public class Login extends javax.swing.JFrame {
             Logar();
         }
     }//GEN-LAST:event_btnLogarKeyPressed
+
+    private void TextoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextoSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,9 +303,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JLabel lblStatus;
     private javax.swing.JTextField txtUsuarios;
     // End of variables declaration//GEN-END:variables
 }

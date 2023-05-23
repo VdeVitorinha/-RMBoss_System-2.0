@@ -30,3 +30,4 @@ nome cpf contato email
 tipo de produto material).
 no modulo de pedidos:
 na parte de cliente o unico campo que devera ser digitado é o de cpf/cnpj.
+abre uma tela de cada tipo por vez
