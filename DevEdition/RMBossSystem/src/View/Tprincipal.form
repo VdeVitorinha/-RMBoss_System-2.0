@@ -11,7 +11,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[984, 671]"/>
+      <Dimension value="[984, 650]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -202,7 +202,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="0" y="0" width="40" height="710"/>
+                      <AbsoluteConstraints x="0" y="0" width="40" height="1900"/>
                     </Constraint>
                   </Constraints>
 
@@ -260,7 +260,7 @@
                               <Component id="jButton7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                               <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="286" max="32767" attributes="0"/>
+                              <EmptySpace pref="1476" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

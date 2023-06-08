@@ -53,7 +53,7 @@ public class Tprincipal extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(984, 671));
+        setPreferredSize(new java.awt.Dimension(984, 650));
 
         jPanel1.setBackground(new java.awt.Color(159, 4, 2));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("CheckBox.icon.selectedBorderColor")));
@@ -245,13 +245,13 @@ public class Tprincipal extends javax.swing.JFrame {
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(1476, Short.MAX_VALUE))
         );
 
         jButton4.getAccessibleContext().setAccessibleDescription("");
 
         jPanel3.add(jPanel2);
-        jPanel2.setBounds(0, 0, 40, 710);
+        jPanel2.setBounds(0, 0, 40, 1900);
 
         pCard.setLayer(jPanel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -321,6 +321,9 @@ public class Tprincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        TrelatorioMaterial materiais = new TrelatorioMaterial();
+        pCard.add(materiais);
+        materiais.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -333,14 +336,23 @@ public class Tprincipal extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        Tprojetos projetos = new Tprojetos();
+        pCard.add(projetos);
+        projetos.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        TcadMaterial cadastroMat = new TcadMaterial();
+        pCard.add(cadastroMat);
+        cadastroMat.setVisible(true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        Tfinanceiro financeiro = new Tfinanceiro();
+        pCard.add(financeiro);
+        financeiro.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
