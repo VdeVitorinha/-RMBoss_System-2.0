@@ -152,7 +152,7 @@ public class Login extends javax.swing.JFrame {
         btnLogar.setForeground(new java.awt.Color(255, 255, 255));
         btnLogar.setText("Entrar");
         btnLogar.setBorder(null);
-        btnLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogarActionPerformed(evt);
@@ -210,7 +210,7 @@ public class Login extends javax.swing.JFrame {
         jLabel7.setBounds(90, 130, 120, 16);
 
         lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/database_status-x.png"))); // NOI18N
-        lblStatus.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblStatus.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(lblStatus);
         lblStatus.setBounds(400, 260, 40, 30);
 
@@ -218,7 +218,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setBounds(10, 10, 440, 300);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ArtLogoVitória.jpg"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel6.add(jLabel5);
         jLabel5.setBounds(-830, -380, 1650, 1060);
 
