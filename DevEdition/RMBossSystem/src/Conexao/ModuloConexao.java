@@ -19,7 +19,7 @@ public class ModuloConexao {
         //armazena informações
         String url = "jdbc:mysql://localhost:3306/banquinho";
         String usuario = "root";
-        String senha = "S3nh@";
+        String senha = "Senha123S";
         //estabelecer conexão
         try {
             Class.forName(driver);
