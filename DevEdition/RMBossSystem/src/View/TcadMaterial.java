@@ -6,6 +6,7 @@ package View;
 
 import java.sql.*;
 import Conexao.ModuloConexao;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class TcadMaterial extends javax.swing.JInternalFrame {
@@ -44,7 +45,7 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
     }
     //Não esta rodando essa etapa... OBS: ver depois
     private void editar(){  
-        String sql = "update estoque set metro=?,categoria=?,preco=?,datainicio=?,disponabilidade=? where produto=?";
+        String sql = "update estoque set metro=?,categoria=?,preco=?,datainicio=? where produto=?";
         try {
             pst=conexao.prepareStatement(sql);
 
@@ -52,18 +53,13 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
             pst.setString(2,txtcategoria.getText());
             pst.setString(3,txtpreco.getText());
             pst.setString(4,txtdate.getText());
-            pst.setString(5,txtdisp.getText());
-            pst.setString(6,txtmaterial.getText());
+            pst.setString(5,txtmaterial.getText());
             
             
             int editar = pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "material adicionado com sucesso ;)");
-                txtmaterial.setText(null);
-                txtcategoria.setText(null);
-                txtmetro.setText(null);
-                txtdisp.setText(null);
-                txtdate.setText(null);
-                txtpreco.setText(null);
+               
+                
                 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -80,8 +76,26 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
         txtdisp.setText(null);
     }
     
+        
+        private void somatoria(){  
+        String sql = "update estoque set disponabilidade = disponabilidade + metro where produto=?";
+        try {
+            pst=conexao.prepareStatement(sql);
 
-    
+            pst.setString(1,txtmaterial.getText());
+            
+            int somatoria = pst.executeUpdate();
+              
+
+               
+
+                
+                
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+            }
+        
+    }
     
     
     
@@ -216,7 +230,7 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(0, 30, 191, 34);
+        jPanel3.setBounds(0, 30, 189, 32);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Metro:");
@@ -295,6 +309,7 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
     private void BtnsalvarEdiatr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsalvarEdiatr1ActionPerformed
         // TODO add your handling code here:
         editar();
+        somatoria();
     }//GEN-LAST:event_BtnsalvarEdiatr1ActionPerformed
 
 

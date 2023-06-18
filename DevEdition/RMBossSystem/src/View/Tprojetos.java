@@ -44,6 +44,16 @@ public class Tprojetos extends javax.swing.JInternalFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jPanel7 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
+        txtNomeP = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtCpfCnpjP = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtContatoP = new javax.swing.JTextField();
+        txtEmailP = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        txtPrazo = new javax.swing.JFormattedTextField();
 
         setClosable(true);
 
@@ -265,6 +275,77 @@ public class Tprojetos extends javax.swing.JInternalFrame {
         jPanel1.add(jPanel7);
         jPanel7.setBounds(380, 120, 370, 270);
 
+        txtNomeP.setBackground(new java.awt.Color(0, 0, 0));
+        txtNomeP.setForeground(new java.awt.Color(255, 255, 255));
+        txtNomeP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomePActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtNomeP);
+        txtNomeP.setBounds(550, 30, 110, 22);
+
+        jLabel2.setText("Nome:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(390, 10, 36, 16);
+
+        txtCpfCnpjP.setBackground(new java.awt.Color(0, 0, 0));
+        txtCpfCnpjP.setForeground(new java.awt.Color(255, 255, 255));
+        txtCpfCnpjP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpfCnpjPActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtCpfCnpjP);
+        txtCpfCnpjP.setBounds(390, 80, 120, 22);
+
+        jLabel3.setText("CPF/CNPJ:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(550, 10, 57, 16);
+
+        jLabel4.setText("Contato:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(390, 60, 46, 16);
+
+        txtContatoP.setBackground(new java.awt.Color(0, 0, 0));
+        txtContatoP.setForeground(new java.awt.Color(255, 255, 255));
+        txtContatoP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContatoPActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtContatoP);
+        txtContatoP.setBounds(390, 30, 150, 22);
+
+        txtEmailP.setBackground(new java.awt.Color(0, 0, 0));
+        txtEmailP.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmailP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(236, 92, 92), 4));
+        txtEmailP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailPActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtEmailP);
+        txtEmailP.setBounds(670, 30, 80, 24);
+
+        jLabel5.setText("Email:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(520, 60, 32, 16);
+
+        jLabel18.setText("Prazo:");
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(670, 10, 32, 16);
+
+        txtPrazo.setBackground(new java.awt.Color(0, 0, 0));
+        txtPrazo.setForeground(new java.awt.Color(255, 255, 255));
+        txtPrazo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrazoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPrazo);
+        txtPrazo.setBounds(520, 80, 130, 22);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -298,6 +379,26 @@ public class Tprojetos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BoxFaseActionPerformed
 
+    private void txtNomePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomePActionPerformed
+
+    private void txtCpfCnpjPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfCnpjPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpfCnpjPActionPerformed
+
+    private void txtContatoPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContatoPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContatoPActionPerformed
+
+    private void txtEmailPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailPActionPerformed
+
+    private void txtPrazoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrazoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrazoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> BoxFase;
@@ -307,6 +408,11 @@ public class Tprojetos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -318,5 +424,10 @@ public class Tprojetos extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtContatoP;
+    private javax.swing.JTextField txtCpfCnpjP;
+    private javax.swing.JTextField txtEmailP;
+    private javax.swing.JTextField txtNomeP;
+    private javax.swing.JFormattedTextField txtPrazo;
     // End of variables declaration//GEN-END:variables
 }

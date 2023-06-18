@@ -239,7 +239,6 @@ public class Tpedidos extends javax.swing.JInternalFrame {
 
         txtCpfCnpjP.setBackground(new java.awt.Color(0, 0, 0));
         txtCpfCnpjP.setForeground(new java.awt.Color(255, 255, 255));
-        txtCpfCnpjP.setText("test"); // NOI18N
         txtCpfCnpjP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpfCnpjPActionPerformed(evt);
