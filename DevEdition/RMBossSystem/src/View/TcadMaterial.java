@@ -6,7 +6,6 @@ package View;
 
 import java.sql.*;
 import Conexao.ModuloConexao;
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class TcadMaterial extends javax.swing.JInternalFrame {
@@ -57,7 +56,7 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
             
             
             int editar = pst.executeUpdate();
-                JOptionPane.showMessageDialog(null, "material adicionado com sucesso ;)");
+                JOptionPane.showMessageDialog(null, "Material adicionado com sucesso ;)");
                
                 
                 
@@ -85,20 +84,19 @@ public class TcadMaterial extends javax.swing.JInternalFrame {
             pst.setString(1,txtmaterial.getText());
             
             int somatoria = pst.executeUpdate();
-              
-
-               
-
-                
+                 
+        txtmaterial.setText(null);
+        txtmetro.setText(null);
+        txtcategoria.setText(null);
+        txtpreco.setText(null);
+        txtdate.setText(null);
+        txtdisp.setText(null);
                 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+       JOptionPane.showMessageDialog(null, e);
             }
         
     }
-    
-    
-    
             //Connection con = conexao = ModuloConexao.conector();
             //String sql = "select sum(disponabilidade) from metro";
              

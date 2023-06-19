@@ -91,16 +91,16 @@ public class Tpedidos extends javax.swing.JInternalFrame {
     
       //salvar pedido
     private void addpedi(){
-            String sql = "insert into pedidos(quantidade,sitpagar,prazo,complementoped,statusped,valor,tipprod,tipmat,clientes_cpfcnpj) values(?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into pedidos(sitpagar,prazo,complementoped,statusped,valor,clientes_cpfcnpj) values(?,?,?,?,?,?)";
             try {
                 pst = conexao.prepareStatement(sql);
                 pst.setString(1,BtnSalvar.getText());
-                pst.setString(2,BoxPaga.getSelectedItem().toString());
-                pst.setString(3,txtPrazo.getText());
-                pst.setString(4,txtDescricao.getText());
-                pst.setString(5,BoxFase.getSelectedItem().toString());
-                pst.setString(6,txtValor.getText());
-                pst.setString(9,txtCpfCnpjP.getText());
+                pst.setString(1,BoxPaga.getSelectedItem().toString());
+                pst.setString(2,txtPrazo.getText());
+                pst.setString(3,txtDescricao.getText());
+                pst.setString(4,BoxFase.getSelectedItem().toString());
+                pst.setString(5,txtValor.getText());
+                pst.setString(6,txtCpfCnpjP.getText());
                 
                 //a estrutura abaixo e usada para confirma a insercao de dados na tabela
                 int adicionado = pst.executeUpdate();
@@ -118,6 +118,25 @@ public class Tpedidos extends javax.swing.JInternalFrame {
                 JOptionPane.showMessageDialog(null, e);
             }
         }
+    
+    private void editar(){
+        String sql = "update pedidos set sitpagar=?,prazo=?,complementoped=?,statusped=?,valor=? where idpedidos=?";
+        try{
+            pst=conexao.prepareStatement(sql);
+            pst.setString(1,BoxPaga.getSelectedItem().toString());
+            pst.setString(2,txtPrazo.getText());
+            pst.setString(3,txtDescricao.getText());
+            pst.setString(4,BoxFase.getSelectedItem().toString());
+            pst.setString(5,txtValor.getText());
+            pst.setString(6,txtAtend.getText());
+            
+            int editar = pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Pedido foi edidado com sucesso ;)"); 
+            
+        } catch (Exception e) {
+          JOptionPane.showMessageDialog(null, e);  
+        }   
+    }
     
     private void limpaTela(){
       //limpa tabela de pedidos
@@ -194,6 +213,7 @@ public class Tpedidos extends javax.swing.JInternalFrame {
         jLabel20 = new javax.swing.JLabel();
         txtAtend = new javax.swing.JTextField();
         BtnLimpar1 = new javax.swing.JButton();
+        btnadd = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(254, 236, 236));
         setClosable(true);
@@ -431,6 +451,15 @@ public class Tpedidos extends javax.swing.JInternalFrame {
             }
         });
 
+        btnadd.setBackground(new java.awt.Color(236, 92, 92));
+        btnadd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnadd.setText("Editar");
+        btnadd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaddActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -442,25 +471,26 @@ public class Tpedidos extends javax.swing.JInternalFrame {
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 761, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 498, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2)
-                                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32))
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(87, 87, 87)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel18)
                                         .addGap(55, 55, 55)
                                         .addComponent(jLabel15))
-                                    .addComponent(BoxFase, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())))
+                                    .addComponent(BoxFase, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnadd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)
+                                .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -538,7 +568,7 @@ public class Tpedidos extends javax.swing.JInternalFrame {
                                                         .addGap(81, 81, 81)
                                                         .addComponent(BoxPaga, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                                .addGap(0, 24, Short.MAX_VALUE))
+                                .addGap(0, 22, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(BtnLimpar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -630,7 +660,8 @@ public class Tpedidos extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(BtnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnadd, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane3))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
@@ -729,6 +760,11 @@ public class Tpedidos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCpfCnpjPActionPerformed
 
+    private void btnaddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddActionPerformed
+        // TODO add your handling code here:
+        editar();
+    }//GEN-LAST:event_btnaddActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> BoxEstadoP;
@@ -738,6 +774,7 @@ public class Tpedidos extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnEntrar3;
     private javax.swing.JButton BtnLimpar1;
     private javax.swing.JButton BtnSalvar;
+    private javax.swing.JButton btnadd;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
